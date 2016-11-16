@@ -1,6 +1,11 @@
 # java2c-template
 
+Javaの文からCの文への翻訳器のテンプレートです。
+課題で用います。
+
 ## Requirements
+* JDK
+ * http://www.oracle.com/technetwork/java/javase/downloads/index.html
 * The BNF Converter (bnfc)
  * http://bnfc.digitalgrammars.com/
 * CUP
