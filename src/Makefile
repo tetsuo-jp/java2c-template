@@ -1,5 +1,11 @@
 # Cの文からJavaの文への変換のテスト
 testTrans:
+	bnfc -java C.cf
+	bnfc -java javaBNF.cf
+	make -f Makefile_javaBNF javaBNF/Yylex.class
+	make -f Makefile_C C/Yylex.class
+	# make testCStm
+	# make testJavaStm
 	javac java2c/Java2C.java java2c/Trans.java
 	echo "a = 1;" | java java2c/Java2C
 
@@ -14,6 +20,10 @@ testJavaStm:
 test_unit:
 	make -f Makefile_C test
 	make -f Makefile_javaBNF test
+
+clean:
+	make -f Makefile_C clean
+	make -f Makefile_javaBNF clean
 
 distclean:
 	make -f Makefile_C distclean

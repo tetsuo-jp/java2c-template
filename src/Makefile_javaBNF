@@ -7,8 +7,8 @@ CUPFLAGS=-nopositions -expect 100
 JLEX=JLex.Main
 
 # gsed for mac, sed for linux
-#SED=sed
-SED=gsed
+SED=sed
+#SED=gsed
 
 all: test
 
@@ -28,7 +28,7 @@ absyn: javaBNF/Absyn/ProgramFile.java javaBNF/Absyn/Prpkg.java javaBNF/Absyn/Pro
 	${JAVAC} ${JAVAC_FLAGS} $^
 
 javaBNF/Yylex.java: javaBNF/Yylex
-	$(SED) -i -e s/'<YYINITIAL>else if { return new Symbol(sym._SYMB_9); }'/'<YYINITIAL>"else if" { return new Symbol(sym._SYMB_9); }'/ javaBNF/Yylex
+	$(SED) -i '' -e s/'<YYINITIAL>else if { return new Symbol(sym._SYMB_9); }'/'<YYINITIAL>"else if" { return new Symbol(sym._SYMB_9); }'/ javaBNF/Yylex
 	${JAVA} ${JAVA_FLAGS} ${JLEX} javaBNF/Yylex
 
 javaBNF/sym.java javaBNF/parser.java: javaBNF/javaBNF.cup

@@ -772,16 +772,16 @@ public class Trans
 			return null;
 		}
 		public C.Absyn.Exp visit(javaBNF.Absyn.Eplus p, Object arg)
-		{ /* Code For Eplus Goes Here */
-			p.exp_1.accept(new ExpVisitor(), arg);
-			p.exp_2.accept(new ExpVisitor(), arg);
-			return null;
+		{
+			C.Absyn.Exp e1 = p.exp_1.accept(new ExpVisitor(), arg);
+			C.Absyn.Exp e2 = p.exp_2.accept(new ExpVisitor(), arg);
+			return new C.Absyn.Eplus(e1,e2);
 		}
 		public C.Absyn.Exp visit(javaBNF.Absyn.Eminus p, Object arg)
-		{ /* Code For Eminus Goes Here */
-			p.exp_1.accept(new ExpVisitor(), arg);
-			p.exp_2.accept(new ExpVisitor(), arg);
-			return null;
+		{
+			C.Absyn.Exp e1 = p.exp_1.accept(new ExpVisitor(), arg);
+			C.Absyn.Exp e2 = p.exp_2.accept(new ExpVisitor(), arg);
+			return new C.Absyn.Eminus(e1,e2);
 		}
 		public C.Absyn.Exp visit(javaBNF.Absyn.Etimes p, Object arg)
 		{ /* Code For Etimes Goes Here */
