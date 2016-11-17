@@ -7,7 +7,7 @@ testTrans:
 	# make testCStm
 	# make testJavaStm
 	javac java2c/Java2C.java java2c/Trans.java
-	echo "a = 1;" | java java2c/Java2C
+	echo "a = 1 + 2 - 3;" | java java2c/Java2C
 
 testCStm:
 	javac test/TestCStm.java

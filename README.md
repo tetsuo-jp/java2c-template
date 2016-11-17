@@ -12,3 +12,5 @@ Javaの文からCの文への翻訳器のテンプレートです。
  * http://www2.cs.tum.edu/projects/cup/index.php
 * JLex
  * https://www.cs.princeton.edu/~appel/modern/java/JLex/
+* sed
+ * Cygwinの場合はインストールが必要
